@@ -1,0 +1,118 @@
+@import 'lib'
+@import '../../node_modules/nib'
+
+#header-background
+  position absolute
+  width 100%
+  #header-background-gradient
+    content '.'
+    color 'transparent'
+    background linear-gradient(top, transparent, black)
+    position absolute
+    bottom 0
+    width 100%
+    height 40%
+    opacity 0
+    z-index 2
+  li
+    position absolute
+    top 0
+    left 0
+    background center center no-repeat
+    background-size cover
+    z-index -1
+    width 100%
+    height 100%
+    opacity 0
+    transition opacity 1s ease-in-out
+    transform translate3d(0,0,0)
+    z-index 1
+    &.active
+      opacity 1
+
+#main-header
+  width 100%
+  height 100%
+  position relative
+
+#main-logo
+  width 100%
+  top 50%
+  padding 0 38%
+  position absolute
+  transition opacity 0.3s ease-in
+  z-index 4
+  text-align center
+  img
+    display inline-block
+    max-width 100%
+
+@media (max-width: 1600px)
+  #main-logo
+    padding 0 30%
+    margin-top -3%
+@media (max-width: 1440px)
+  #main-logo
+    padding 0 27%
+    margin-top -6%
+@media (max-width: 1024px)
+  #main-logo
+    padding 0 20%
+    margin-top -8%
+@media (max-width: 640px)
+  #main-logo
+    padding 0 20px
+    margin-top -12%
+
+#main-header-down-arrow
+  background center center no-repeat url('images/down-arrow.svg')
+  background-size 40px
+  width 100%
+  height 80px
+  margin auto
+  position absolute
+  bottom 0
+  cursor pointer
+  border 0
+  z-index 2
+  bottom -100px
+  opacity 0
+  transition-duration 0.3s !important
+
+#intro-statement
+  font-size 42px
+  line-height 1.2em
+  padding 0 foreground-padding
+  position relative
+  margin-top 300px
+  p
+    margin-bottom 1em
+  #intro-statement-inner
+    padding-top 60px
+    width 680px
+    line-height 1.1em
+    hr
+      width foreground-width
+      position absolute
+      left foreground-padding
+      top 0
+      border 0
+      border-top 3px solid white
+@media (max-width: 1024px)
+  #intro-statement
+    margin 200px 0
+    #intro-statement-inner
+      width 100%
+
+
+backgrounds(size)
+  #header-background ul
+    for i in (0..8)
+      li:nth-child({i})
+        background-image url('images/header/Cover_0' + i + '_' + size + '.jpg')
+
+backgrounds(1920)
+@media (max-width: 1440px)
+  backgrounds(1440)
+@media (max-width: 640px)
+  backgrounds(640)

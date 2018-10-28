@@ -1,0 +1,87 @@
+@import '../../node_modules/nib'
+@import 'foreground'
+@import 'background'
+@import 'header'
+@import 'iscroll'
+@import 'social'
+@import 'footer'
+@import 'mobile'
+@import 'spinners'
+
+global-reset()
+
+html
+  background black
+
+body
+  background black
+  color white
+  garamond()
+  line-height 1.4em
+  font-size default-font-size
+  &.logo-loading
+    #main-logo
+      opacity 0
+    #body-loading-spinner
+      display block
+  &.body-loading
+    .non-logo
+      opacity 0
+
+.non-logo
+  transition opacity 1s cubic-bezier(0.550, 0.055, 0.675, 0.190)
+
+#body-loading-spinner
+  display none
+  top 50%
+  left 50%
+  margin-left -15px
+  position fixed
+  background white
+
+*
+  box-sizing border-box
+
+em
+  font-style italic
+
+button, a
+  outline none
+  color white
+
+#intro-statement, #content
+  max-width 1600px
+  margin-left auto
+  margin-right auto
+#intro-statement .half-viewport-height
+  margin-top -18%
+
+#content
+  position relative
+
+.faux-underline
+  &
+    display: inline-block
+    position: relative
+    text-decoration: none
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    display: inline-block
+    height: 1em
+    width: 100%
+    margin-top: 0.15em
+    border-bottom: 1px solid #777
+    color: rgb(80, 80, 80)
+  &:hover
+    text-decoration none
+
+.iScrollIndicator
+  border 1px solid #999 !important
+
+@font-face
+  font-family 'AvantGardeGothicITCW01D 731075'
+  font-weight normal
+  font-style normal
+  src url("fonts/c18aee57-7585-4a8b-9a1c-69d226301d73.woff") format("woff")

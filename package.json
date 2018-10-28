@@ -1,0 +1,23 @@
+{
+  "name": "artsy-2014",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "jade": "*",
+    "stylus": "*",
+    "coffee-script": "*",
+    "nib": "*",
+    "knox": "*",
+    "glob": "*",
+    "express": "*",
+    "browserify": "*",
+    "browserify-dev-middleware": "*",
+    "coffeeify": "*",
+    "uglify-js": "*",
+    "sqwish": "*",
+    "underscore": "*",
+    "iscroll": "*",
+    "morpheus": "*"
+  }
+}

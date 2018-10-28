@@ -1,0 +1,59 @@
+@import 'lib'
+
+#foreground
+  position absolute
+  width 100%
+  z-index 2
+  transition opacity 0.3s ease-out
+  transform translate3d(0,0,0)
+  li
+    padding foreground-padding
+    height 100%
+    width 100%
+    position absolute
+    opacity 0
+    &:first-child
+      opacity 1
+  header
+    width foreground-width
+
+#foreground, .phone-foreground-container
+  small
+    display block
+    margin-top 20px
+    font-size default-font-size
+  p
+    margin-bottom 1em
+  blockquote
+    font-style italic
+  header
+    padding-top 30px
+    border-top 3px solid white
+    position absolute
+    position relative
+    h1
+      font-size foreground-header-font-size
+      line-height 1em
+    .foreground-header-body
+      bottom foreground-padding
+      font-size default-font-size
+      line-height 23px
+      margin-top 40px
+
+#foreground-gradient
+  background linear-gradient(top, transparent, black)
+  width 100%
+  height 30%
+  bottom -5px
+  position absolute
+  left 0
+
+#foreground-social-buttons
+  z-index 2
+
+// IOS6 has a hard time dealing with the fluid widths of the foreground headers
+body.ios6 #foreground header
+  width 290px !important
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)
+  body.ios6 #foreground header
+    width 230px !important
